@@ -1,0 +1,18 @@
+
+
+<div class="container">
+      <div *ngFor="let profiles of profiles">
+      <div class="card shadow-lg">
+        <img class="prof-pic" [src]="profiles.downloadUrl">
+
+        <div class="card-body">
+        <h2>My Bio</h2>
+          <p class="card-text">{{profiles.bio}}</p>
+          <div class="d-flex justify-content-between align-items-center">
+        
+            <small class="text-muted">9 mins</small>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>

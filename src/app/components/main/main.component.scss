@@ -1,0 +1,45 @@
+.darkner{
+    background-color: black;
+    filter: drop-shadow( 4px 4px 3px black);
+    border-radius: 15px;
+    padding: 5px;
+}
+
+
+.fire-b {
+    width: 200px;
+    filter: drop-shadow( 2px 2px 1px black);
+}
+
+.ang {
+    height: 150px;
+    filter: drop-shadow( 2px 2px 1px black);
+}
+
+.node {
+    width: 200px;
+    filter: drop-shadow( 2px 2px 1px black);
+}
+
+h1 {
+    filter: drop-shadow( 2px 2px 1px rgb(0, 0, 0));
+}
+
+h2, .card-text {
+    color: black;
+}
+footer {
+  
+    position: fixed;
+    background: rgb(79, 0, 66);
+    bottom:0px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    height:10px;
+    text-align: center; }
+.toon{
+    height: 60px;
+    width: 60px;
+}
+ 

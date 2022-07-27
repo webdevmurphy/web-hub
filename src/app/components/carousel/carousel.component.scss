@@ -1,0 +1,48 @@
+
+
+
+.carousel-container{
+    position: relative;
+   
+    filter: drop-shadow(10px 10px 12px black);
+
+    width: 100%;
+}
+
+
+
+.carousel-item  img {
+    max-width: auto;
+    max-height: auto;
+    position:absolute;
+    background: cover;
+    top: 0;
+    width: 100%;
+    border-radius: 35px;
+}
+
+.carousel-inner > .carousel-item {
+    height:40vh;
+    margin-top: 32px;
+    border:solid 2px black;
+    border-radius: 35px;
+   
+}
+
+@media (max-width: 768px) {
+    .carousel-container{
+        margin: none;
+       
+    }
+    .carousel-inner > .carousel-item {
+  
+      border-radius: 15px;
+     
+    }
+    
+    .carousel-item  img {
+      
+     
+        border-radius: 15px;
+    }
+}

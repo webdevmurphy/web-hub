@@ -1,0 +1,37 @@
+.thumb {
+    height: 150px;
+    border-radius: 15px;
+    margin: 10px;
+    filter: drop-shadow(8px 4px 4px #000000);
+}
+
+.prof-pic{
+    float: right;
+    border-radius: 25px;
+    margin: 10px;
+    filter: drop-shadow(8px 4px 4px #000000);
+    height: 45vh;
+}
+
+.example-viewport {
+  height:700px;
+  width: 950px;
+  border: 1px solid black;
+}
+
+.example-item {
+  height: 250px;
+}
+
+h1 {
+    filter: drop-shadow(8px 4px 4px #000000);
+    font-size: 2.5em;
+    float: right;
+}
+
+.darkner{
+    background-color: black;
+    border-radius: 35px;
+    padding: 25px;
+    
+}
