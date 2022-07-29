@@ -19,9 +19,11 @@
   <div class="mssg-area">
   <div class="darkner">
 
+
+
 <div *ngFor="let post of posts | async" class="posts">
+   
   <mat-list class="mssg">
-  
     <mat-list-item *ngFor="let profilePic of profilePics">
       <img matListAvatar [src]="post.downloadUrl" alt="...">
       <h3 matLine> {{post.title}} </h3>
@@ -34,5 +36,8 @@
   </div>
 </div>
 </div>
+
+
+
 
 

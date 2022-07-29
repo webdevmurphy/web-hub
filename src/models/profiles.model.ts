@@ -5,6 +5,7 @@ export class Profiles {
     isProfilePic: string;
     uid: string;
     bio: string;
+    likes: number;
  
  
     constructor(photoObj) {
@@ -14,6 +15,7 @@ export class Profiles {
          this.firstName = photoObj.firstName;
          this.lastName = photoObj.lastName;
          this.bio = photoObj.bio;
+         this.likes = photoObj.likes;
      
     }
  }

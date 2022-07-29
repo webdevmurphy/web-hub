@@ -6,6 +6,7 @@ export class Photo {
     src: string;
     thumb: string;
     user?: object;
+    profLikes: Array<String>;
  
 
     constructor(photoObj) {
@@ -16,5 +17,6 @@ export class Photo {
         this.isProfilePic = photoObj.isProfilePic;
         this.downloadUrl = photoObj.downloadUrl;
         this.alt = photoObj.alt;
+        this.profLikes = photoObj.profLikes;
     }
 }

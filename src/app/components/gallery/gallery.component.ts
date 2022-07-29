@@ -47,15 +47,6 @@ export class GalleryComponent implements OnInit {
         ).subscribe(res => this.images = res)
 
 
-
-      
-
-
-
-
-
-
-
       } else {
         this.isLoggedIn = false;
 

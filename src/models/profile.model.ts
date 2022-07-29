@@ -6,5 +6,6 @@ export class Profile {
     public  uid: string = null,
     public downloadUrl: string = null,
     public bio: string = null,
+    public likes: number = 0,
  ){}
 }

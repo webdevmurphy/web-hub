@@ -1,0 +1,39 @@
+
+[
+    {
+        "id": 1,
+        "title":"Featured Artist",
+        "subtitle":"Mike Murphy",
+        "img":"/assets/images/MichaelMurphy.jpg",
+        "imgAlt":"Michael Murphy looking freaky!",
+        "content":"Here is some placeholder text to say some stuff",
+        "video":"https://www.youtube.com/embed/y2vzBdIejVY?start=31&amp;autoplay=1"
+    },
+    {
+        "id": 2,
+        "title":"Technical Genius",
+        "subtitle":"Andy James",
+        "img":"/assets/images/andyJames.jpg",
+        "imgAlt":"boo",
+        "content":"Watch andy play and then silent cry because you will never reach that level of proficency.",
+        "video":"https://www.youtube.com/embed/OOCbKcP5qrs?start=19&autoplay=1"
+    },
+    {
+        "id": 3,
+        "title":"Master of all Things Tapped, and Orchestral",
+        "subtitle":"Michael Romeo",
+        "img":"/assets/images/mRomeo.jpg",
+        "imgAlt":"boo",
+        "content":"Shred it up people! Ohh Yea!",
+        "video":"https://www.youtube.com/embed/FNhdVufI7w4?start=20&autoplay=1"
+    },
+    {
+        "id": 4,
+        "title":"The future of Guitar!",
+        "subtitle":"Jason Richardson",
+        "img":"/assets/images/jasonRichardson.jpg",
+        "imgAlt":"boo",
+        "content":"Awesome mega cool super technical hurt your fingers lesson stuff.",
+        "video":"https://www.youtube.com/embed/gDl-x-2BWlk?start=20&autoplay=1"
+    }
+]

@@ -40,7 +40,6 @@ export class AuthService {
   );
 
 
-
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
@@ -97,12 +96,12 @@ export class AuthService {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
+      photoURL: user.photoURL,
       roles: {
         admin: false
       }
      
     }
-    location.reload();
     return userRef.set(data, { merge: true })
   };
   

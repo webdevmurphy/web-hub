@@ -8,6 +8,8 @@ import 'firebase/firestore';
 import { map } from 'rxjs/operators';
 import { profilePic } from '../../../models/profilePic.model';
 
+
+
 @Component({
   selector: 'app-messages',
   templateUrl: './messages.component.html',

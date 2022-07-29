@@ -1,0 +1,20 @@
+
+<tr id="article{{article.id}}">
+    
+   
+
+    <div *ngIf='videoMode' id="media-1-vid">   
+        <iframe width="95%" height="315" style="filter: drop-shadow(10px 10px 12px black);border:solid 1px white;" [src]='safeUrl' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+        <button id='youBtn' (click)='switchMode()' type="button" class="btn btn-primary btn-xs btn-danger float-right">
+                <i class="far fa-window-close"></i></button>
+    </div>
+
+    <tr *ngIf='!videoMode' id="media-1" class="media">
+        <img (click)='switchMode()' class="mr-3" src={{article.img}} alt={{article.imgAlt}}>
+       
+
+
+
+    </tr>
+
+

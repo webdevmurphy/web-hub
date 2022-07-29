@@ -34,6 +34,14 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import { ViewProfileComponent } from './components/view-profile/view-profile.component';
 import { GALLERY_CONFIG } from 'ng-gallery';
 import { BlogComponent } from './components/blog/blog.component';
+import { GuitarComponent } from './components/guitar/guitar.component';
+import { AboutComponent } from './components/about/about.component';
+import { GuitarCardComponent } from './components/guitar-card/guitar-card.component';
+import { GuitarListComponent } from './components/guitar-list/guitar-list.component';
+import { HttpClientModule } from '@angular/common/http';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +54,11 @@ import { BlogComponent } from './components/blog/blog.component';
     CarouselLargeComponent,
     CreateProfileComponent,
     ViewProfileComponent,
-    BlogComponent
+    BlogComponent,
+    GuitarComponent,
+    AboutComponent,
+    GuitarCardComponent,
+    GuitarListComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +69,7 @@ import { BlogComponent } from './components/blog/blog.component';
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     GalleryModule,
     ScrollingModule,
     MatDialogModule,

@@ -9,6 +9,8 @@ import { CreateProfileComponent } from './components/create-profile/create-profi
 import { ViewProfileComponent } from './components/view-profile/view-profile.component';
 import { AuthGuard } from 'src/services/auth.guard';
 import { BlogComponent } from './components/blog/blog.component';
+import { GuitarComponent } from './components/guitar/guitar.component';
+import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'main', pathMatch:'full'},
@@ -18,10 +20,10 @@ const routes: Routes = [
   {path: 'mssg', component: MessagesComponent, canActivate: [AuthGuard]},
   {path: 'profile', component: CreateProfileComponent, canActivate: [AuthGuard]},
   {path: 'view-profile', component: ViewProfileComponent, canActivate: [AuthGuard]},
+  {path: 'guitar', component: GuitarComponent, canActivate: [AuthGuard]},
+  {path: 'about', component: AboutComponent, canActivate: [AuthGuard]},
   {path: 'blog', component: BlogComponent},
   {path: '**', redirectTo: 'main'}
- 
-
 ];
 
 @NgModule({

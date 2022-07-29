@@ -78,6 +78,8 @@ onSubmit(profile){
  console.log("hello " + this.user.uid);
  profile.timestamp = `${new Date()}`;
  profile.uid = this.user.uid;
+ profile.likes = 0;
+ profile.profLikes = 0;
  this.afs.collection('profile').doc(this.user.uid).set(profile);
  this.afs.collection('profile-pic').doc(this.user.uid).set({ "downloadUrl": profile.downloadUrl, "uid": this.user.uid });
  this.router.navigate(['view-profile']);
