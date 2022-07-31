@@ -3,7 +3,7 @@
     {
         "id": 1,
         "title":"Featured Artist",
-        "subtitle":"Mike Murphy",
+        "subtitle":"Michael Murphy",
         "img":"/assets/images/MichaelMurphy.jpg",
         "imgAlt":"Michael Murphy looking freaky!",
         "content":"Here is some placeholder text to say some stuff",
@@ -35,5 +35,15 @@
         "imgAlt":"boo",
         "content":"Awesome mega cool super technical hurt your fingers lesson stuff.",
         "video":"https://www.youtube.com/embed/gDl-x-2BWlk?start=20&autoplay=1"
+    },
+    {
+        "id": 5,
+        "title":"Just a little Jamming for fun!",
+        "subtitle":"Michael Murphy",
+        "img":"/assets/images/MichaelMurphy.jpg",
+        "imgAlt":"boo",
+        "content":"Awesome mega cool super technical hurt your fingers lesson stuff.",
+        "video":"https://www.youtube.com/embed/oC_c8KJ_v-k"
+
     }
 ]

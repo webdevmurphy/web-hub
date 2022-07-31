@@ -1,5 +1,10 @@
 {
   "projects": {
-    "default": "myweb-gallery"
-  }
+    "default": "myweb-gallery",
+    "webhub": "galleryapp-b236b",
+    "webapp": "myweb-gallery",
+    "web-hub": "murphy-s"
+  },
+  "targets": {},
+  "etags": {}
 }

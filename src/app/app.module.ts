@@ -39,6 +39,9 @@ import { AboutComponent } from './components/about/about.component';
 import { GuitarCardComponent } from './components/guitar-card/guitar-card.component';
 import { GuitarListComponent } from './components/guitar-list/guitar-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ViewFilesComponent } from './components/view-files/view-files.component';
+
+
 
 
 
@@ -58,7 +61,8 @@ import { HttpClientModule } from '@angular/common/http';
     GuitarComponent,
     AboutComponent,
     GuitarCardComponent,
-    GuitarListComponent
+    GuitarListComponent,
+    ViewFilesComponent
   ],
   imports: [
     BrowserModule,

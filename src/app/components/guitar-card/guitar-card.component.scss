@@ -5,11 +5,13 @@
     border: 2px solid rgb(231, 0, 252);
     padding: -1px;
     margin: 15px;
+    filter: brightness(50%); 
 }
 
 .mr-3:hover {
-    filter: brightness(50%); 
+    filter: brightness(100%); 
     border: solid 2px rgb(255, 255, 255);
+    filter: drop-shadow(12px 12px 12px purple);
 }
 
 
@@ -18,13 +20,14 @@
     font-family: 'Roboto Slab', serif;
     font-size:1.2em;
     text-shadow: 4px 4px 5px black;
-    color: #d34f2a;
-    background-color:black;
+    color: #ff00ea;
+    background-color: black;
+    
 }
 
 .media-body{
     font-family: 'Roboto Slab', serif;
-    font-size:.8em;
+    font-size:1.8em;
     text-shadow: 4px 4px 5px black;
     color: white;
 }
@@ -61,22 +64,14 @@ h2 {
 }
 
 #media-1-vid{
-   margin-left: 45px;
+
 }
 
 #youBtn{
-    margin-right:15px;
+    margin-left:15px;
     border: solid 2px white;
     box-shadow: 2px 2px 3px black;
-}
-
-#inform{
-    position:absolute;
-    left: 45px;
-    background-color: black;
-    margin-top:85px;
-    font: size 0.7em;
-    border:solid 2px red;
+    padding: 10px;
 }
 
 

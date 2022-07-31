@@ -57,6 +57,12 @@ p {
     background-color: none !important; 
 }
 
+.container{
+    --bs-card-bg:none;
+
+    height: 20vh;
+}
+
 .card{
     --bs-card-bg:none;
 }

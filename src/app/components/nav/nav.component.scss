@@ -3,8 +3,8 @@
 .iamName {
     margin: 5px;
     color:rgb(253, 253, 253);
-}
 
+}
 
 
 .saysme {
@@ -16,9 +16,11 @@
     margin-right: 5px;
     color:black;
     cursor: pointer;
-
 }
 
+.mepic{
+  padding-left: 31%;
+}
 
 
 .card {
@@ -31,9 +33,20 @@
     filter: drop-shadow(10px 10px 12px black);
     font-family: 'Cinzel', serif;
     font-size: 1.4em;
+    width: 100%;
     
   }
   
+  .navbar ul li ul {
+    float: left;
+    list-style: none;
+    position: relative;
+  }
+  .navbar ul li ul a   {
+    display: block;
+    position: absolute;
+    background-color: red;
+  }
   
   a {
     color: white;
@@ -52,11 +65,15 @@
     
   }
   
+  .dropdown-menu.show {
+    z-index: 99;
+    background-color: rgb(52, 0, 77);
+  }
   
   a, a:hover, a:focus {
     text-decoration: none;
     transition: all 0.3s;
-    color:rgb(255, 255, 255);
+    color:white;
     filter: drop-shadow(10px 10px 12px black);
   }
   
@@ -66,6 +83,10 @@
   
   #nav-login-link {
     color: white;
+  }
+  
+  .navbar{
+    z-index: 99;
   }
   
   /*--------flash card--------*/

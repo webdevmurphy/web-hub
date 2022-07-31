@@ -1,7 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500&display=swap');
 .darkner{
     background-color: rgb(255, 255, 255);
     filter: drop-shadow( 4px 4px 3px black);
     border-radius: 15px;
     padding: 5px;
 
+}
+
+.example-card{
+   
+    width: 20vw;
+}
+
+.demo-2{
+    font-family: 'Cormorant SC', serif;
+    font-size: 1.5rem;
+    filter: drop-shadow( 1px 2px 6px black);
+}
+
+h3{
+    font-family: 'Cormorant SC', serif;
+    font-size: 1.2rem !important;
+    filter: drop-shadow( 1px 2px 3px black);
 }

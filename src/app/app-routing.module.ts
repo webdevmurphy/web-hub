@@ -11,6 +11,7 @@ import { AuthGuard } from 'src/services/auth.guard';
 import { BlogComponent } from './components/blog/blog.component';
 import { GuitarComponent } from './components/guitar/guitar.component';
 import { AboutComponent } from './components/about/about.component';
+import { ViewFilesComponent } from './components/view-files/view-files.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'main', pathMatch:'full'},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'profile', component: CreateProfileComponent, canActivate: [AuthGuard]},
   {path: 'view-profile', component: ViewProfileComponent, canActivate: [AuthGuard]},
   {path: 'guitar', component: GuitarComponent, canActivate: [AuthGuard]},
+  {path: 'files', component: ViewFilesComponent, canActivate: [AuthGuard]},
   {path: 'about', component: AboutComponent, canActivate: [AuthGuard]},
   {path: 'blog', component: BlogComponent},
   {path: '**', redirectTo: 'main'}

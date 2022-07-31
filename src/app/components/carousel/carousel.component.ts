@@ -26,10 +26,10 @@ export class CarouselComponent implements OnInit {
       if (user) {
         this.isLoggedIn = true;
 
-        this.afs.collection('photos', ref => ref.where('user.uid', '==', user.uid))
+        this.afs.collection('photos')
         .valueChanges().pipe(
           map(res => res.map( imgResult => new Photo(imgResult) ))
-        ).subscribe(res => this.images = res)
+        ).subscribe(res => this.images = res);
       } else {
         this.isLoggedIn = false;
 
@@ -39,6 +39,10 @@ export class CarouselComponent implements OnInit {
         ).subscribe(res => this.images = res);
       }
     });
+
+  
+
+
   }
 
 

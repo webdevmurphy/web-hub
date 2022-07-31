@@ -1,66 +1,71 @@
 
-<nav class="navbar sticky-top navbar-expand-lg">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navToggle" aria-controls="navToggle" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" routerLink="main" routerLinkActive="active">Home</a>
-      <div class="collapse navbar-collapse" id="navToggle">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="carousel-lg" routerLinkActive="active">Carousel</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="gallery" routerLinkActive="active">Gallery</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="mssg" routerLinkActive="active">Messages</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="profile" routerLinkActive="active">Create Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="view-profile" routerLinkActive="active">View Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="blog" routerLinkActive="active">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="guitar" routerLinkActive="active">Guitar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="about" routerLinkActive="active">about</a>
-          </li>
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <a class="navbar-brand" routerLink="main" routerLinkActive="active">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+  
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Gallery
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="gallery" routerLinkActive="active">Gallery</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="carousel-lg" routerLinkActive="active">Carousel</a>
+            <div class="dropdown-divider"></div>    
+            <a class="dropdown-item" routerLink="profile" routerLinkActive="active">Create Profile</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="view-profile" routerLinkActive="active">View Profile</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="mssg" routerLinkActive="active">Messages</a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link" routerLink="blog" routerLinkActive="active">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="guitar" routerLinkActive="active">Guitar</a>
+        </li>
 
+        <li class="nav-item">
+          <a class="nav-link" routerLink="about" routerLinkActive="active">About</a>
+        </li>
+        <li class="nav-item">
           <app-file-upload></app-file-upload>
-         
-          
-        </ul>
+        </li>
+      </ul>
 
 
 
-        <div class="nav-item">
-          <div class="container">
-            <div class="row">
-              <div class="card transition">
-                <h2 class="transition">Hello!</h2>
-                <p class="card-text">..and a pic of me.</p>
-                <div class="cta-container transition"><a routerLink="view-profile" class="cta">About</a></div>
-                <div class="card_circle transition"></div>
-              </div>
+
+<div class="mepic">
+      <div class="nav-item">
+        <div class="container">
+          <div class="row">
+            <div class="card transition">
+              <h2 class="transition">Hello!</h2>
+              <p class="card-text">..and a pic of me.</p>
+              <div class="cta-container transition"><a routerLink="view-profile" class="cta">About</a></div>
+              <div class="card_circle transition"></div>
             </div>
           </div>
         </div>
-
-
-        <p class="iamName" *ngIf="auth.user$ | async as user;">{{user.displayName}}</p>
-        <div class="login">
-            <span *ngIf="auth.user$ | async; then logout else login"></span>
-          </div>
       </div>
     </div>
-  </nav>
 
+
+      <p class="iamName" *ngIf="auth.user$ | async as user;">{{user.displayName}}</p>
+      <div class="login">
+          <span *ngIf="auth.user$ | async; then logout else login"></span>
+        </div>
+    </div>
+  </nav>
 
 
   
@@ -75,3 +80,6 @@
       <i class="fas fa-lock"></i><p class="saysme" style="display: inline;">Login</p>
     </a>
   </ng-template>
+
+
+
