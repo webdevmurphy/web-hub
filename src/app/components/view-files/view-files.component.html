@@ -1,1 +1,12 @@
-<p>view-files works!</p>
+
+
+
+<mat-nav-list>
+    <mat-list-item *ngFor="let image of images">
+       <a matLine [href]="image.dataUrl">{{ image.path }}</a>
+       <button type="button" (click)="removeUpload(image.path)" class="btn btn-primary">Delete</button>
+
+    </mat-list-item>
+  </mat-nav-list>
+
+

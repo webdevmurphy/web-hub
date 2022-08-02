@@ -7,6 +7,7 @@ export class Photo {
     thumb: string;
     user?: object;
     dataUrl: string;
+    videoUrl: string;
     profLikes: Array<String>;
  
 
@@ -19,6 +20,7 @@ export class Photo {
         this.isProfilePic = photoObj.isProfilePic;
         this.downloadUrl = photoObj.downloadUrl;
         this.alt = photoObj.alt;
+        this.videoUrl = photoObj.videoUrl;
         this.profLikes = photoObj.profLikes;
     }
 }

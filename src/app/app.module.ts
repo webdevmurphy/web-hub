@@ -40,6 +40,7 @@ import { GuitarCardComponent } from './components/guitar-card/guitar-card.compon
 import { GuitarListComponent } from './components/guitar-list/guitar-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewFilesComponent } from './components/view-files/view-files.component';
+import { ViewVideoComponent } from './components/view-video/view-video.component';
 
 
 
@@ -62,7 +63,8 @@ import { ViewFilesComponent } from './components/view-files/view-files.component
     AboutComponent,
     GuitarCardComponent,
     GuitarListComponent,
-    ViewFilesComponent
+    ViewFilesComponent,
+    ViewVideoComponent
   ],
   imports: [
     BrowserModule,
