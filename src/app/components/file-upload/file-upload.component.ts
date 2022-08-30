@@ -101,7 +101,7 @@ export class FileUploadComponent implements OnInit {
 
 
     }
-    if(file.type == 'video/mp4'){
+  else if(file.type == 'video/mp4'){
       console.log("youtube Famous");
       const storage = getStorage();
       const storageRef = ref(storage, 'video/' + file.name);

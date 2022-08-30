@@ -45,4 +45,26 @@ export class ViewVideoComponent implements OnInit {
    
   }
 
+
+  removeUpload(image:string){
+    this.auth.user$.subscribe(user => this.user = user);
+    this.auth.user$.subscribe(user => {
+      if (user) {
+  
+        this.isLoggedIn = true;
+        console.log(image);
+        const docRef = this.afs.collection('video', ref => ref.where("path", "==", image));
+        const storageRef = this.db.ref('video/' + image);
+        docRef.snapshotChanges().forEach((changes) => {
+          changes.map((a) => {
+            this.fileId = a.payload.doc.id;
+            console.log(a.payload.doc.id);
+            this.afs.collection('video').doc(this.fileId).delete();
+            storageRef.delete();
+          })
+        })
+      } }).unsubscribe;
+      
+    }
+
 }

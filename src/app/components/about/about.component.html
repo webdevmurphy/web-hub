@@ -1,1 +1,32 @@
-<p>about works!</p>
+ <h1>Text</h1>
+<div *ngFor="let link of links">
+    {{link.src}}
+</div>
+
+
+
+
+<ol>
+    <li>
+      <mat-form-field>
+        <input matInput [(ngModel)]="name" placeholder="What's your name?">
+      </mat-form-field>
+    </li>
+    <li>
+      <button mat-raised-button (click)="openDialog()">Pick one</button>
+    </li>
+    <li *ngIf="links">
+      You chose: <i>{{links}}</i>
+    </li>
+  </ol>
+
+
+
+
+
+
+
+
+  
+<iframe class="doc" src="../../../assets/data/myResume-IT Specialist.pdf"></iframe>
+
