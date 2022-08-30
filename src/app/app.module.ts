@@ -23,6 +23,9 @@ import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { MatDialog } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {MatListModule} from '@angular/material/list';
 import { CarouselLargeComponent } from './components/carousel-large/carousel-large.component';
 import { CreateProfileComponent } from './components/create-profile/create-profile.component';
@@ -76,6 +79,7 @@ import { ViewVideoComponent } from './components/view-video/view-video.component
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatDialog,
     GalleryModule,
     ScrollingModule,
     MatDialogModule,
