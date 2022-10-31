@@ -9,6 +9,7 @@ export class Photo {
     dataUrl: string;
     videoUrl: string;
     profLikes: Array<String>;
+    key!:string;
  
 
     constructor(photoObj) {
@@ -22,5 +23,6 @@ export class Photo {
         this.alt = photoObj.alt;
         this.videoUrl = photoObj.videoUrl;
         this.profLikes = photoObj.profLikes;
+        this.key = photoObj.key
     }
 }

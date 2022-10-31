@@ -1,27 +1,36 @@
-<tr *ngFor="let image of images">
- 
 
+<tr  *ngFor="let fileUpload of fileUploads">
+ 
+  
     <div class="container col-md-4">
       <div class="mb-4 box-shadow">
     
-        <label for="enum_answer_{{image.path}}">
-          <img height="150vh" [src]="image.downloadUrl" class="carousel-image" [alt]="image.alt">
-          <input id="enum_answer_{{image.path}}" [value]='image.path' type="radio" hidden name="enums" >
-      
+        <label for="enum_answer_{{fileUpload.url}}">
+          <img [src]="fileUpload.url" class="carousel-image" [alt]="">
+          <input id="enum_answer_{{fileUpload.url}}" [value]='fileUpload'  type="radio" hidden name="enums" >
+        
         </label>
     
         <div class="card-body">
           
           <div class="d-flex justify-content-between align-items-center clearfix">
             <div class="btn-group">
-             
-              <button  mat-raised-button color="primary" (click)='removeUpload(image.path)'>Delete Photo</button>
-            
+              <button mat-mini-fab class="upload-btn" color="primary" (click)='openDialog(fileUpload)'><mat-icon>delete_forever</mat-icon></button>
             </div>
            
           </div>
         </div>
       </div>
     </div>
-    
-    </tr>
+
+
+</tr>
+
+
+
+
+
+
+  
+
+  

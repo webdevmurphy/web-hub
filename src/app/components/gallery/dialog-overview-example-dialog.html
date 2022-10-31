@@ -1,0 +1,29 @@
+<p>Would you like to delte this file?</p>
+
+<div class="container">
+   <p>{{data.name}}</p>
+</div>
+
+
+<button  mat-raised-button color="primary" (click)='onNoClick(data.name)'>Delete</button>
+
+<button  mat-raised-button color="primary" (click)='onNoClick("null")'>Cancel</button>
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+<a href="{{ fileUpload.url }}">{{ fileUpload.name }}</a>
+<button (click)="deleteFileUpload(fileUpload)"
+  class="btn btn-danger btn-sm" style="float: right">
+  Delete
+</button>

@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireStorage} from '@angular/fire/compat/storage';
+import { AngularFireStorage, createUploadTask} from '@angular/fire/compat/storage';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Observable } from 'rxjs';
+import { ObjectUnsubscribedError, Observable } from 'rxjs';
 import { User } from '../../../models/user';
 import { AuthService } from '../../../services/auth.service';
-import { __values } from 'tslib';
 
+import { AngularFireUploadTask } from '@angular/fire/compat/storage';
+import { finalize, tap, switchMap } from 'rxjs/operators';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { snapshotChanges } from '@angular/fire/compat/database';
+import { compileClassMetadata } from '@angular/compiler';
+import { Firestore } from 'firebase/firestore';
 
 @Component({
   selector: 'app-file-upload',
@@ -14,22 +18,27 @@ import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/
   styleUrls: ['./file-upload.component.scss']
 })
 export class FileUploadComponent implements OnInit {
-  percentage: Observable<number>;
-  isHovering: boolean;
+
+  percentage: Observable<number>;  
   isProfilePic;
-  files: File[] = [];
+  
   fileName: string;
   user: User;
+  downloadUrl: string;
   private isLoggedIn: boolean = false;
+
+
   constructor(public auth: AuthService,
     private storage: AngularFireStorage,
     private db: AngularFirestore) { }
 
   ngOnInit(): void {
-    this.auth.user$.subscribe(user => this.user = user);
+   
+    
   }
 
-  onFileSelected(event: any){
+
+  onFileSelected(event: any) :void {
 
     const file: File = event.target.files[0];
    
@@ -74,11 +83,13 @@ export class FileUploadComponent implements OnInit {
       }, 
       () => {
         // Upload completed successfully, now we can get the download URL
+      
         getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
-          console.log('File available at', downloadUrl);
-  
+         
+          
           this.auth.user$.subscribe(user => {
            
+            
             let uploadData = {
               downloadUrl,
               path: file.name,
@@ -88,11 +99,12 @@ export class FileUploadComponent implements OnInit {
               user,
               alt: "Alternate image text"
             }
+        
             this.db.collection(`photos`).add( uploadData );
-            console.log("success!");
+           
+            console.log('File available at', downloadUrl);
+            
             })
-  
-  
   
         });
       }
@@ -227,6 +239,7 @@ export class FileUploadComponent implements OnInit {
             }
             this.db.collection(`data`).add( uploadData );
             console.log("success!");
+            
             })
   
   

@@ -10,6 +10,7 @@ import { User } from '../models/user';
 import { of as observableOf } from 'rxjs';
 import firebase from "firebase/compat/app";
 import {GoogleAuthProvider} from 'firebase/auth';
+import { firstValueFrom } from 'rxjs';
 
 
 @Injectable({
@@ -84,7 +85,7 @@ export class AuthService {
     const user = await this.getUser();
     
     this.setPresence('offline');
-    this.updateCollection(user);
+
     this.afAuth.signOut();
    
     return this.router.navigate(['/']);
@@ -108,14 +109,14 @@ export class AuthService {
 
   //wraping  db observable so we can listen to status based on uid
   getPresence(uid: string) {
-    this.updateCollection(uid);
+    console.log("UID: " + uid);
     return this.db.object(`${uid}`).valueChanges();
   }
   
   //return as as promise so you can use async await 
   getUser() {
    
-    return this.afAuth.authState.pipe(first()).toPromise();
+    return firstValueFrom(this.afAuth.authState);
   }
 
 
@@ -123,7 +124,7 @@ export class AuthService {
     const user = await this.getUser();
     
     if (user) {
-      this.updateCollection(user);
+     
       return this.db.object(`status/${user.uid}`).update({ status, timestamp: this.timestamp });
     }
   }
@@ -154,18 +155,16 @@ export class AuthService {
     return this.afAuth.authState.pipe(
       tap(user => {
         if (user) {
-          this.updateCollection(user);
           this.db.object(`status/${user.uid}`).query.ref.onDisconnect()
             .update({
               status: 'offline',
               timestamp: this.timestamp
           });
-
-          
         }
       })
     );
   }
+
 
 
 updateOnAway() {
@@ -181,10 +180,7 @@ updateOnAway() {
 }
 
 
-updateCollection(user){
-  
-  this.afs.collection('online').doc(user.uid).set({'name': user.displayName, 'uid': user.uid ,'status': status});
-}
+
 
 testUpdate(status){
   const user = this.getUser();

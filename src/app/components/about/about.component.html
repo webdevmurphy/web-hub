@@ -1,32 +1,38 @@
- <h1>Text</h1>
-<div *ngFor="let link of links">
-    {{link.src}}
+
+
+
+
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Michael Murphy: Resume
+    </mat-panel-title>
+    <mat-panel-description>
+      Click here to view my Resume
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <iframe class="doc" src="../../../assets/data/myResume-IT Specialist.pdf"></iframe>
+
+</mat-expansion-panel>
+
+
+
+<div class="container">
+ <h1 class="intro">Chirp, Chirp</h1>
+
+  <div class="sqrBall">
+   
+    
+    <p>Hello, hope your day is well.</p>
+    <img  style="height: 250px;"  src="../../../assets/images/molang.gif" />
+
+
+
+
+
+
+    
+  </div>
 </div>
-
-
-
-
-<ol>
-    <li>
-      <mat-form-field>
-        <input matInput [(ngModel)]="name" placeholder="What's your name?">
-      </mat-form-field>
-    </li>
-    <li>
-      <button mat-raised-button (click)="openDialog()">Pick one</button>
-    </li>
-    <li *ngIf="links">
-      You chose: <i>{{links}}</i>
-    </li>
-  </ol>
-
-
-
-
-
-
-
-
-  
-<iframe class="doc" src="../../../assets/data/myResume-IT Specialist.pdf"></iframe>
-

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
+
 
 
 
@@ -8,14 +11,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss']
 })
 
-
 export class AboutComponent implements OnInit {
+
+  panelOpenState = false;
 
 public links: Array<any> = [
      { src: "../../../assets/data/myResume-IT Specialist.pdf"},
   ];
 name;
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -30,10 +34,11 @@ showInfo(link){
 }
 
 
-openDialog(){
-
-}
 
 
 
 }
+
+
+
+

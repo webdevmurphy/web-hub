@@ -1,9 +1,19 @@
 
 
-<div *ngFor="let image of images">
-
+<tr *ngFor="let fileUpload of fileUploads">
+  
+<div class="container">
 <video width="320" height="240" controls>
-    <source [src]="image.videoUrl" type="video/mp4">
+    <source [src]="fileUpload.url" type="video/mp4">
 
-  Your browser does not support the video tag. <!-- Text to be shown incase browser doesnt support html5 -->
-</video>    <button type="button" (click)="removeUpload(image.path)" class="btn btn-primary">Delete</button></div>
+ 
+</video>
+  
+<button mat-mini-fab color="primary" (click)="openDialog(fileUpload)" class="upload-btn"><mat-icon>delete_forever</mat-icon></button>
+</div>
+
+
+</tr>
+
+
+

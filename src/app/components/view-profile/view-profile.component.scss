@@ -10,7 +10,7 @@
     border-radius: 25px;
     margin: 10px;
     filter: drop-shadow(8px 4px 4px #000000);
-    height: 65vh;
+    height: 25vh;
 }
 
 .example-viewport {
@@ -59,8 +59,8 @@ p {
 
 .container{
     --bs-card-bg:none;
-
-    height: 20vh;
+    width:30%;
+    height: 10vh;
 }
 
 .card{

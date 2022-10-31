@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Cormorant+SC:wght@800&family=Roboto+Mono:wght@800&display=swap');
+
+
+.carousel-image {
+    margin-top: 35px;
+    height: 350px;
+    width: 450px;
+    filter: drop-shadow(8px 4px 4px #000000);
+    border: solid 2px black;
+    border-radius: 15px;
+    margin-right: 25px;
+}
+
+p {
+    font-family: 'Amatic SC';
+    font-style: bold;
+    font-size: 2em;
+    color:white;
+    font-weight: 400;
+    filter: drop-shadow(8px 4px 4px #000000);
+}
+
+.custom-modalbox > mat-dialog-container {
+    background-color: black !important;
+  }
+
+  ::ng-deep {
+    .mat-dialog-container{
+      box-shadow: 0px 11px 15px -7px rgb(0 0 0 / 20%), 0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgb(0 0 0 / 12%);
+      background: #000000;
+      color: rgba(1, 0, 0, 0.87);
+      border: solid 2px rgb(86, 0, 132);
+      overflow: hidden;
+    }
+   }
+
+   button {
+    background-color:  rgb(86, 0, 132);
+    border: none;
+    color: white;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+  }
+
+  .upload-btn{
+    filter: drop-shadow(8px 4px 4px #000000);
+    margin: 5px;
+  }
+
+
+
+  

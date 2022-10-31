@@ -1,91 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Cinzel&display=swap');
 
-.iamName {
-    margin: 5px;
-    color:rgb(253, 253, 253);
-
-}
-
-
-.saysme {
+ @import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500&display=swap');
  
-   cursor: pointer;
+ .nav-item .nav-link {
+  color:white;
+  font-family: 'Cormorant SC', serif;
+  font-size: 1.7rem;
+  filter:drop-shadow(4px 4px 10px black);
+  margin: 10px;
+ }
+
+ .navbar {
+  background-color: rgb(86, 0, 132);
+  width: 80%;
+  border-radius: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  filter:drop-shadow(4px 4px 10px black);
+ }
+
+ .navbar-toggler {
+ margin: 10px;
+ border-radius: 35px;
+  filter: invert(100%);
+ }
+
+ .iamName {
+  margin:5px;
+ } 
+
+ .saysme {
+  margin: 5px;
+ }
+
+ .dropdown-menu {
+  color: white;
+  background-color:rgb(86,0,132);
+  :hover {
+    background-color:rgb(35, 1, 54);
+ }
 }
 
-.fas {
-    margin-right: 5px;
-    color:black;
-    cursor: pointer;
-}
 
-.mepic{
-  padding-left: 31%;
-}
+ .dropdown-item {
+  color:white;
+ }
 
+ a.dropdown-item :hover{
+  background-color: red;
+ }
 
-.card {
-    margin: 25px;
-}
-
-.navbar {
-    background-color: rgb(52, 0, 77);
-    margin-bottom: 20px;
-    filter: drop-shadow(10px 10px 12px black);
-    font-family: 'Cinzel', serif;
-    font-size: 1.4em;
-    width: 100%;
-    
-  }
-  
-  .navbar ul li ul {
-    float: left;
-    list-style: none;
-    position: relative;
-  }
-  .navbar ul li ul a   {
-    display: block;
-    position: absolute;
-    background-color: red;
-  }
-  
-  a {
-    color: white;
-    margin: 5px;
-    font-family: 'Cinzel', serif;
-    font-size: 1.2em;
-  }
- 
-  
-  .active {
-    background-color: #777778;
-    border: solid 2px rgb(255, 255, 255);
-    border-radius: 15px;
-    color:rgb(255, 255, 255);
-    padding: 5px;
-    
-  }
-  
-  .dropdown-menu.show {
-    z-index: 99;
-    background-color: rgb(52, 0, 77);
-  }
-  
-  a, a:hover, a:focus {
-    text-decoration: none;
-    transition: all 0.3s;
-    color:white;
-    filter: drop-shadow(10px 10px 12px black);
-  }
-  
-  .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
-    color: rgba(255, 255, 255, 0.9);
-  }
-  
-  #nav-login-link {
-    color: white;
-  }
-  
-  .navbar{
-    z-index: 99;
-  }
- 

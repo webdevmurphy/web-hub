@@ -1,0 +1,13 @@
+<p>user-status works!</p>
+
+
+<div *ngIf="presence$ | async as presence" class="tag is-large" 
+      [ngClass]="{
+          'is-success':  presence === 'online',
+          'is-warning': presence === 'away',
+          'is-danger':  presence  === 'offline'
+      }"
+>
+
+  {{ presence}}
+</div>

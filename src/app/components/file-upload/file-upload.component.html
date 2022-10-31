@@ -1,7 +1,6 @@
 
 <div *ngIf="auth.user$ | async as user;">
-    <input type="file" class="file-input"
-    (change)="onFileSelected($event)" #fileUpload>
+    <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
     
     <div class="file-upload">
     

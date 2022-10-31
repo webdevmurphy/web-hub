@@ -39,7 +39,7 @@ downloadUrl;
 
 
         
-        this.afs.collection('photos', ref => ref.where('user.uid', '==', user.uid))
+        this.afs.collection('photos', ref => ref.where('user', '==', user.uid))
         .valueChanges({ idField: 'fileId' }).pipe(
           map(res => res.map( imgResult => new Photo(imgResult) ))
         ).subscribe(res => this.images = res)

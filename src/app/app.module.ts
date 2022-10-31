@@ -42,8 +42,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { ViewFilesComponent } from './components/view-files/view-files.component';
 import { ViewVideoComponent } from './components/view-video/view-video.component';
 
+import {MatExpansionModule} from '@angular/material/expansion';
+import { GameBoardComponent } from './components/game-board/game-board.component';
+import { GameCardComponent } from './components/game-card/game-card.component';
+import { GameRestartDialogComponent } from './components/game-restart-dialog/game-restart-dialog.component';
+import { UserStatusComponent } from './components/user-status/user-status.component';
+import { UploadFormComponent } from './components/upload-form/upload-form.component';
+import { UploadListComponent } from './components/upload-list/upload-list.component';
+import { UploadDetailsComponent } from './components/upload-details/upload-details.component';
+import { UploadDialogComponent } from './components/upload-dialog/upload-dialog.component';
 
 
+  
 
 
 @NgModule({
@@ -64,7 +74,15 @@ import { ViewVideoComponent } from './components/view-video/view-video.component
     GuitarCardComponent,
     GuitarListComponent,
     ViewFilesComponent,
-    ViewVideoComponent
+    ViewVideoComponent,
+    GameBoardComponent,
+    GameCardComponent,
+    GameRestartDialogComponent,
+    UserStatusComponent, 
+    UploadFormComponent,
+    UploadListComponent,
+    UploadDetailsComponent,
+    UploadDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -75,6 +93,7 @@ import { ViewVideoComponent } from './components/view-video/view-video.component
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
+    MatExpansionModule,
     HttpClientModule,
     GalleryModule,
     ScrollingModule,

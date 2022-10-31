@@ -33,12 +33,12 @@ export class CarouselLargeComponent implements OnInit {
       if (user) {
         this.isLoggedIn = true;
 
-        this.afs.collection('photos', ref => ref.where('user.uid', '==', user.uid))
+        this.afs.collection('photos', ref => ref.where('user', '==', user.uid))
         .valueChanges().pipe(
           map(res => res.map( imgResult => new Photo(imgResult) ))
         ).subscribe(res => this.images = res)
         
-        this.afs.collection('photos', ref => ref.where('user.uid', '==', user.uid))
+        this.afs.collection('photos', ref => ref.where('user', '==', user.uid))
         .valueChanges().pipe(
           map(res => res.map( imgResult => new ImageItem(imgResult))) 
         ).subscribe(res => this.pictures = res)
