@@ -7,6 +7,7 @@ export class FileUpload {
   uid!: string;
   file: File;
   user: User;
+  isProfile: boolean;
   type: string;
 
   constructor(file: File) {

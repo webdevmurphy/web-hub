@@ -26,14 +26,20 @@
        Last Name is required
 </div>
 
+
+
+
+
 <input type="text" class="form-control" fullWidth placeholder="Biography" #bio="ngModel" [(ngModel)]="model.bio" name="bio">
 <div class="darkner">
 <h1>Select a Photo</h1>
     <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
-        <div *cdkVirtualFor="let image of images" class="example-item">
+        <div *ngFor="let image of images" class="example-item">
     
             <mat-radio-group [(ngModel)]="downloadUrl" name="downloadUrl">
-                <mat-radio-button  [value]="image.downloadUrl">
+                <mat-radio-button  [value]="image.key">
+                  
+        
                     <img style="height: 250px;"  [src]="image.downloadUrl" >
                 </mat-radio-button>
             

@@ -7,5 +7,6 @@ export class Profile {
     public downloadUrl: string = null,
     public bio: string = null,
     public likes: number = 0,
+    public key: string = null,
  ){}
 }

@@ -20,7 +20,6 @@ export interface DialogData {
 })
 export class GalleryComponent implements OnInit {
 
-
   fileUploads?: any[];
 
   constructor(

@@ -6,6 +6,7 @@ export class Profiles {
     uid: string;
     bio: string;
     likes: number;
+    key: string;
  
  
     constructor(photoObj) {
@@ -16,6 +17,7 @@ export class Profiles {
          this.lastName = photoObj.lastName;
          this.bio = photoObj.bio;
          this.likes = photoObj.likes;
+         this.key = photoObj.key
      
     }
  }

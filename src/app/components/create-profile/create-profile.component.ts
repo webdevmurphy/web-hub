@@ -27,8 +27,9 @@ user: User;
 private isLoggedIn: boolean = false;
 userID
 downloadUrl;
+key;
 
-  constructor(private afs: AngularFirestore, private auth: AuthService, private router: Router) { }
+  constructor(private afs: AngularFirestore, private auth: AuthService, private router: Router, private db: AngularFireDatabase) { }
 
   ngOnInit(): void {
 
@@ -81,7 +82,9 @@ onSubmit(profile){
  profile.likes = 0;
  profile.profLikes = 0;
  this.afs.collection('profile').doc(this.user.uid).set(profile);
- this.afs.collection('profile-pic').doc(this.user.uid).set({ "downloadUrl": profile.downloadUrl, "uid": this.user.uid });
+ console.log(profile.downloadUrl);
+this.db.object('uploads/'+ profile.downloadUrl).update({isProfile: true});
+ this.afs.collection('profile-pic').doc(this.user.uid).set({ "downloadUrl": profile.downloadUrl, "uid": this.user.uid, 'key': profile.downloadUrl});
  this.router.navigate(['view-profile']);
 }
 selectPhoto(downloadUrl){

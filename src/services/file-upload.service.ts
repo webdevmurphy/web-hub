@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireList, snapshotChanges } from '@angular/fire/compat/database';
+import { AngularFireDatabase, AngularFireList} from '@angular/fire/compat/database';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
@@ -7,7 +7,7 @@ import { finalize } from 'rxjs/operators';
 import { FileUpload } from '../models/file-upload.model';
 import { User } from '../models/user';
 import { AuthService } from './auth.service';
-import { query } from 'firebase/firestore';
+
 
 
 
@@ -37,6 +37,7 @@ export class FileUploadService {
           fileUpload.name = fileUpload.file.name;
           fileUpload.uid = this.user.uid;
           fileUpload.type = fileUpload.file.type;
+          fileUpload.isProfile = false;
           this.saveFileData(fileUpload);
         });
       })

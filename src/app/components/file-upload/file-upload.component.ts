@@ -84,7 +84,7 @@ export class FileUploadComponent implements OnInit {
       () => {
         // Upload completed successfully, now we can get the download URL
       
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
+       getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
          
           
           this.auth.user$.subscribe(user => {
@@ -222,7 +222,7 @@ export class FileUploadComponent implements OnInit {
       }, 
       () => {
         // Upload completed successfully, now we can get the download URL
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
+       getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
           console.log('File available at', downloadUrl);
   
           this.auth.user$.subscribe(user => {
