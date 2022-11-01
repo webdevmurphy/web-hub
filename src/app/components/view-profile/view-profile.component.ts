@@ -15,6 +15,7 @@ import { Profile } from 'src/models/profile.model';
 })
 export class ViewProfileComponent implements OnInit {
   public profiles: Profiles[];
+  public data: Profiles[];
   public profile: Profile[];
   user: User;
   private isLoggedIn: boolean = false;
@@ -32,7 +33,7 @@ export class ViewProfileComponent implements OnInit {
       if (user) {
         this.isLoggedIn = true;
 
-
+         
         this.afs.collection('profile', ref => ref.where('uid', '==', this.user.uid))
         .valueChanges({ uid: 'uid' }).pipe(
           map(res => res.map( imgResult => new Profiles(imgResult) ))
