@@ -4,8 +4,11 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AuthService } from '../../../services/auth.service';
 import { map } from 'rxjs/operators';
 import { User } from '../../../models/user';
-
+import { FileUploadService } from '../../../services/file-upload.service';
 import { Profile } from 'src/models/profile.model';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+
+
 
 
 @Component({
@@ -14,6 +17,8 @@ import { Profile } from 'src/models/profile.model';
   styleUrls: ['./view-profile.component.scss']
 })
 export class ViewProfileComponent implements OnInit {
+  fileUploads?: any[];
+
   public profiles: Profiles[];
   public data: Profiles[];
   public profile: Profile[];
@@ -24,8 +29,13 @@ export class ViewProfileComponent implements OnInit {
   likes;
 
   profLikes: string[];
-
-  constructor(private afs: AngularFirestore,private auth: AuthService) { }
+  myVar;
+  myPic: any[];
+  constructor(
+    private afs: AngularFirestore,
+    private auth: AuthService,
+    private uploadService: FileUploadService,
+    private db: AngularFireDatabase) { }
 
   ngOnInit(): void {
     this.auth.user$.subscribe(user => this.user = user);
@@ -39,7 +49,16 @@ export class ViewProfileComponent implements OnInit {
           map(res => res.map( imgResult => new Profiles(imgResult) ))
         ).subscribe(res => this.profiles = res);
 
+    
 
+        this.db.list(this.user.uid).snapshotChanges().subscribe(result => {
+        this.myVar =   result[0].payload.val();
+      
+          console.log(result[0].payload.val());
+        })
+
+        
+       
 
 
 

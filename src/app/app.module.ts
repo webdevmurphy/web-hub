@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
 
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { environment } from '../environments/environment';
 import { AngularFireModule} from '@angular/fire/compat';
@@ -94,6 +95,7 @@ import { UploadDialogComponent } from './components/upload-dialog/upload-dialog.
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
     MatExpansionModule,
+    MatGridListModule,
     HttpClientModule,
     GalleryModule,
     ScrollingModule,

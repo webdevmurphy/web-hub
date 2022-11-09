@@ -11,6 +11,9 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { profilePic } from 'src/models/profilePic.model';
 import { Profiles } from '../../../models/profiles.model';
 import { Router } from '@angular/router';
+import { FileUploadService } from 'src/services/file-upload.service';
+
+
 
 @Component({
   selector: 'app-create-profile',
@@ -28,8 +31,13 @@ private isLoggedIn: boolean = false;
 userID
 downloadUrl;
 key;
-
-  constructor(private afs: AngularFirestore, private auth: AuthService, private router: Router, private db: AngularFireDatabase) { }
+fileUploads?: any[];
+fireList;
+private basePath = '/uploads';
+  constructor(private afs: AngularFirestore,
+     private auth: AuthService,
+      private router: Router, private db: AngularFireDatabase,
+      private uploadService: FileUploadService) { }
 
   ngOnInit(): void {
 
@@ -38,6 +46,9 @@ key;
       if (user) {
         this.isLoggedIn = true;
 
+        
+   
+       
 
         
         this.afs.collection('photos', ref => ref.where('user', '==', user.uid))
@@ -59,7 +70,7 @@ key;
 
 
 
-
+   
 
       } else {
         this.isLoggedIn = false;
@@ -76,30 +87,38 @@ key;
 onSubmit(profile){
 
  console.log(profile);
- console.log("hello " + this.user.uid);
+ console.log("Hello USER ID:" + this.user.uid);
  profile.timestamp = `${new Date()}`;
  profile.uid = this.user.uid;
  profile.likes = 0;
  profile.profLikes = 0;
  this.afs.collection('profile').doc(this.user.uid).set(profile);
- console.log(profile.downloadUrl);
-this.db.object('uploads/'+ profile.downloadUrl).update({isProfile: true});
+ console.log("Logging Key: " + profile.downloadUrl);
+
+
+const itemRef = this.db.object(this.user.uid);
+itemRef.update({isProfile: profile.downloadUrl});
+
+ //this.db.object('uploads/'+ profile.key).update({isProfile: true});
+
+ 
  this.afs.collection('profile-pic').doc(this.user.uid).set({ "downloadUrl": profile.downloadUrl, "uid": this.user.uid, 'key': profile.downloadUrl});
  this.router.navigate(['view-profile']);
 }
+
+
+
 selectPhoto(downloadUrl){
-  this.userID = this.user.uid;
-  console.log("hello" + this.userID + " " + downloadUrl);
- 
-  console.log("success!");
-   this.auth.user$.subscribe(user => this.user = user);
   this.auth.user$.subscribe(user => { 
     if (user) {
    console.log("success!");
    this.afs.collection('profile-pic').doc(this.user.uid).set({ "downloadUrl": downloadUrl, "uid": this.user.uid });
-    }
+  }
   })
   }
+
+
+
 
 
 }

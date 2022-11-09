@@ -31,15 +31,15 @@ export class UploadDialogComponent implements OnInit {
       )
     ).subscribe(fileUploads => {
       this.fileUploads = fileUploads;
-
-      
     });
   }
 
   deleteFileUpload(fileUpload: FileUpload): void {
-   
+
     this.uploadService.deleteFile(fileUpload);
     this.dialogRef.close();
   }
+
+
 
 }

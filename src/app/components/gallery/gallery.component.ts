@@ -47,6 +47,7 @@ export class GalleryComponent implements OnInit {
       this.fileUploads = fileUploads;
     });
   }})
+  
   }
 
 
@@ -63,6 +64,9 @@ export class GalleryComponent implements OnInit {
     })
   } 
 }
+
+
+
 
 
 

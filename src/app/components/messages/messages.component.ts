@@ -7,7 +7,7 @@ import * as firestore from 'firebase/firestore';
 import 'firebase/firestore';
 import { map } from 'rxjs/operators';
 import { profilePic } from '../../../models/profilePic.model';
-
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 
 @Component({
@@ -32,7 +32,11 @@ export class MessagesComponent implements OnInit {
   status = 'control';
   message ="new chat message";
   heroes = [];
-  constructor(private afs: AngularFirestore, public auth: AuthService ) { }
+  myVar;
+  constructor(
+    private afs: AngularFirestore, 
+    public auth: AuthService,
+    private db: AngularFireDatabase ) { }
  
   ngOnInit(): void {
     this.online = this.afs.collection('online', ref => ref.orderBy('name', 'desc').limit(25)).valueChanges();
@@ -53,7 +57,11 @@ export class MessagesComponent implements OnInit {
           map(res => res.map( imgResult => new profilePic(imgResult) ))
         ).subscribe(res => this.profilePics = res);
 
-
+        this.db.list(this.user.uid).snapshotChanges().subscribe(result => {
+          this.myVar =   result[0].payload.val();
+        
+            console.log(result[0].payload.val());
+          })
         
 
       } else {

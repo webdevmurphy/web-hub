@@ -37,7 +37,7 @@
         <div *ngFor="let image of images" class="example-item">
     
             <mat-radio-group [(ngModel)]="downloadUrl" name="downloadUrl">
-                <mat-radio-button  [value]="image.key">
+                <mat-radio-button  [value]="image.downloadUrl">
                   
         
                     <img style="height: 250px;"  [src]="image.downloadUrl" >

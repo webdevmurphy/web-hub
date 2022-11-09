@@ -28,6 +28,7 @@ export class ViewFilesComponent implements OnInit {
       if (user) {
         this.isLoggedIn = true;
 
+        
 
         
         this.afs.collection('data', ref => ref.where('user.uid', '==', user.uid))

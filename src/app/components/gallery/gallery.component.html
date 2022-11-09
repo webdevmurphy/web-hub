@@ -29,8 +29,17 @@
 
 
 
-
-
+<!-- 
+  The Mat way .. hate the way it scales. 
+<mat-grid-list cols="4" rowHeight="1:1">
+  <mat-grid-tile *ngFor="let fileUpload of fileUploads">
+    <img class="carousel-image" [src]="fileUpload.url">
+  <div class="btn-group">
+              <button mat-mini-fab class="upload-btn" color="primary" (click)='openDialog(fileUpload)'><mat-icon>delete_forever</mat-icon></button>
+            </div>
+  </mat-grid-tile>
   
+</mat-grid-list>
+  -->
 
   
