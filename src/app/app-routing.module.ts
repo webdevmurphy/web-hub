@@ -14,6 +14,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ViewFilesComponent } from './components/view-files/view-files.component';
 import { ViewVideoComponent } from './components/view-video/view-video.component';
 import { GameBoardComponent } from './components/game-board/game-board.component';
+import { CanvasComponent } from './components/canvas/canvas.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'main', pathMatch:'full'},
@@ -28,9 +29,20 @@ const routes: Routes = [
   {path: 'video', component: ViewVideoComponent, canActivate: [AuthGuard]},
   {path: 'about', component: AboutComponent, canActivate: [AuthGuard]},
   {path: 'blog', component: BlogComponent},
-  {path: 'game', component: GameBoardComponent},
+  {path: 'game', component: GameBoardComponent, canActivate: [AuthGuard]},
+  {path: 'canvas', component: CanvasComponent},
   {path: '**', redirectTo: 'main'}
 ];
+
+
+
+
+
+
+
+
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

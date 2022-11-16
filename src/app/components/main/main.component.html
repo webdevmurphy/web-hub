@@ -4,12 +4,22 @@
         <div class="col-lg-7"><app-carousel></app-carousel></div>
   
         <div class="col-lg-5">
-
+            
             <div class="darkner"> 
-        
-            <h1 class="font-weight-light" *ngIf="auth.user$ | async as user;">Greetings, {{user.displayName}}!</h1>
-                <p>Thanks for looking around my website. Its still in development, so expect some things not to work. This site uses google auth service, so just login with your google email.</p><img class="toon" src="../../../assets/images/anime.gif"></div>
-        
+                
+                <h1 *ngIf="auth.user$ | async as user;">Greetings, {{user.displayName}}!</h1>
+                <p>Thanks for looking around my website. Its still in development,.
+                     so expect some things not to work. This site uses google auth service,
+                      so just login with your google email.</p>
+                      
+                      <mat-slide-toggle [formControl]="autoRenew" (change)="onChange()"> </mat-slide-toggle>
+                      <p>Slide to change image!</p>
+                
+                    <img class="toon" [src]="color" >
+                    <h1>{{label}}</h1>
+                </div>
+                
+                
     </div>
     </div>
     <!-- Call to Action-->
@@ -39,7 +49,7 @@
             <div class="card h-100">
                 <div class="card-body">
                     <h2 class="card-title"> <div class="col-4">
-                      <img class="imgBx" src="../../../assets/images/techlabels/angular.png">
+                      <img class="imgBx"  src="../../../assets/images/techlabels/angular.png">
                     </div></h2>
                     <div class="details">
                     <p class="card-text">Angular is a development platform, built on TypeScript</p>

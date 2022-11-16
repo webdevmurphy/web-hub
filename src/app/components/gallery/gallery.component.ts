@@ -7,6 +7,8 @@ import { map } from 'rxjs/operators';
 import { UploadDialogComponent } from '../upload-dialog/upload-dialog.component';
 import { FileUploadService } from '../../../services/file-upload.service';
 import { FileUpload } from '../../../models/file-upload.model';
+import { DialogModule } from '@angular/cdk/dialog';
+import { LgImageViewComponent } from '../lg-image-view/lg-image-view.component';
 
 export interface DialogData {
   myFile: FileUpload;
@@ -19,6 +21,9 @@ export interface DialogData {
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
+
+ height
+ width
 
   fileUploads?: any[];
 
@@ -63,6 +68,23 @@ export class GalleryComponent implements OnInit {
       console.log(`Dialog result: ${result}`);    
     })
   } 
+
+  resizeMe(fileUpload: HTMLInputElement): void {
+      const dialogRef = this.dialog.open(LgImageViewComponent, {
+        panelClass: 'custom-modalbox',
+        data: {myFile: fileUpload},
+
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        result = fileUpload;
+        console.log(`Dialog result: ${result}`);
+      })
+
+
+  }
+
+
+
 }
 
 

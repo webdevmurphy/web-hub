@@ -18,7 +18,7 @@ import { FileUploadComponent } from './components/file-upload/file-upload.compon
 import { MainComponent } from './components/main/main.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { MessagesComponent } from './components/messages/messages.component';
-
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDialogModule} from '@angular/material/dialog';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
@@ -52,6 +52,8 @@ import { UploadFormComponent } from './components/upload-form/upload-form.compon
 import { UploadListComponent } from './components/upload-list/upload-list.component';
 import { UploadDetailsComponent } from './components/upload-details/upload-details.component';
 import { UploadDialogComponent } from './components/upload-dialog/upload-dialog.component';
+import { CanvasComponent } from './components/canvas/canvas.component';
+import { LgImageViewComponent } from './components/lg-image-view/lg-image-view.component';
 
 
   
@@ -83,7 +85,9 @@ import { UploadDialogComponent } from './components/upload-dialog/upload-dialog.
     UploadFormComponent,
     UploadListComponent,
     UploadDetailsComponent,
-    UploadDialogComponent
+    UploadDialogComponent,
+    CanvasComponent,
+    LgImageViewComponent
   ],
   imports: [
     BrowserModule,
@@ -96,6 +100,7 @@ import { UploadDialogComponent } from './components/upload-dialog/upload-dialog.
     BrowserAnimationsModule,
     MatExpansionModule,
     MatGridListModule,
+    MatSlideToggleModule,
     HttpClientModule,
     GalleryModule,
     ScrollingModule,

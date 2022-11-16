@@ -51,12 +51,6 @@ export class ViewProfileComponent implements OnInit {
 
     
 
-        this.db.list(this.user.uid).snapshotChanges().subscribe(result => {
-        this.myVar =   result[0].payload.val();
-      
-          console.log(result[0].payload.val());
-        })
-
         
        
 

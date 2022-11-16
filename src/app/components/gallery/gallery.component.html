@@ -6,7 +6,7 @@
       <div class="mb-4 box-shadow">
     
         <label for="enum_answer_{{fileUpload.url}}">
-          <img [src]="fileUpload.url" class="carousel-image" [alt]="">
+          <img [src]="fileUpload.url" (click)="resizeMe(fileUpload)" class="carousel-image" [alt]="">
           <input id="enum_answer_{{fileUpload.url}}" [value]='fileUpload'  type="radio" hidden name="enums" >
         
         </label>
